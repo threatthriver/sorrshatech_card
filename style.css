@@ -128,12 +128,14 @@ body {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-50%) rotate(30deg);
     border-radius: 45%;
-    animation: wave 10s infinite linear;
+    animation: wave 30s infinite linear;
+    will-change: transform;
+    pointer-events: none;
 }
 
 @keyframes wave {
-    from { transform: translateY(-50%) rotate(0deg); }
-    to { transform: translateY(-50%) rotate(360deg); }
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
 }
 
 .logo-circle {
