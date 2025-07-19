@@ -63,18 +63,19 @@
 
 body {
     position: relative;
-    overflow: hidden;
-
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     color: var(--text);
     line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
 }
 
 .card {
@@ -86,11 +87,12 @@ body {
     box-shadow: var(--shadow);
     overflow: hidden;
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 1fr;
     transform: translateY(20px);
     opacity: 0;
     animation: fadeInUp 0.6s ease-out forwards;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px 0;
 }
 
 .card:hover {
@@ -108,7 +110,7 @@ body {
 .branding {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
-    padding: 40px 30px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,29 +154,30 @@ body {
 }
 
 .logo {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
     background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     position: relative;
     z-index: 1;
+    line-height: 1.2;
 }
 
 .tagline {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.9;
-    margin: 10px 0 0;
+    margin: 8px 0 0;
     font-weight: 300;
-    max-width: 80%;
+    max-width: 90%;
     line-height: 1.5;
 }
 
 .details {
-    padding: 30px;
+    padding: 25px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -186,13 +189,13 @@ body {
 }
 
 .section-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary);
-    margin-bottom: 15px;
-    padding-bottom: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     position: relative;
     display: inline-block;
 }
@@ -209,18 +212,12 @@ body {
 }
 
 .info {
-    margin: 10px 0;
-    line-height: 1.7;
     display: flex;
     align-items: flex-start;
-    transition: all 0.3s ease;
-    padding: 6px 10px;
-    border-radius: 8px;
-}
-
-.info:hover {
-    background: rgba(37, 99, 235, 0.05);
-    transform: translateX(5px);
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    word-break: break-word;
 }
 
 .info i {
@@ -288,17 +285,98 @@ body {
 }
 
 .footer {
-    background: var(--light-bg);
-    padding: 15px 30px;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #64748b;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.8rem;
+    color: #6b7280;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    body {
+        padding: 20px;
+        align-items: center;
+    }
+    
+    .card {
+        grid-template-columns: 0.8fr 1.2fr;
+        min-height: 600px;
+        margin: 0;
+    }
+    
+    .details {
+        padding: 30px;
+    }
+    
+    .branding {
+        padding: 40px 30px;
+    }
+    
+    .logo {
+        font-size: 2.2rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+        max-width: 80%;
+    }
+    
+    .info {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    
+    .section-title {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+    }
+    
+    .profile-avatar img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .profile-socials {
+        margin-bottom: 15px;
+        gap: 15px;
+    }
+    
+    .profile-social-link {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+    
+    .info i {
+        margin-top: 3px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
 }
 
 .social-links {
